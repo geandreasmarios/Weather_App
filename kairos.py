@@ -58,7 +58,7 @@ WEATHER_DESCRIPTIONS = {
 
 #Αντιστοίχιση καιρικων φαινομενων με icons(Εικονες)
 WHEATHER_ICONS = {
-    0  : "hlios.png ",
+    0  : "hlios.png",
     1  : "hlios.png",
     2  : "sunefia.png",
     3  : "sunefia.png",
@@ -68,7 +68,7 @@ WHEATHER_ICONS = {
     53 : "psixala.png",
     55 : "broxh.png",
     56 : "xiononero.png", 
-    57 : "psixala.png ",
+    57 : "psixala.png",
     61 : "psixala.png",
     63 : "psixala.png",
     65 : "broxh.png",
@@ -78,8 +78,8 @@ WHEATHER_ICONS = {
     73 : "xioni.png",
     75 : "xioni.png ",
     77 : "xiononero.png",
-    80 : "psixala.png ",
-    81 : "psixala.png ",
+    80 : "psixala.png",
+    81 : "psixala.png",
     82 : "broxh.png",
     85 : "xiononero.png",
     86 : "xioni.png",
