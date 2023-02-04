@@ -3,6 +3,7 @@ import requests
 import datetime
 from PIL import Image, ImageTk
 
+
 BIG_FONT = ("Arial", 32, "bold")
 MEDIUM_FONT = ("Arial", 16, "bold")
 
@@ -102,6 +103,9 @@ window = tk.Tk()
 window.geometry("600x400")
 window.config(bg=BACK_COLOR)
 window.title("Weather App ")
+
+icon = tk.PhotoImage(file="assets/app_icon.png")
+window.iconphoto(False, icon)
 
 main_frame = None
 weather_images = []
