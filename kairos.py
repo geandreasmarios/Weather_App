@@ -3,6 +3,19 @@ import requests
 import datetime
 from PIL import Image, ImageTk
 
+GREEK_DAYS = {
+"Monday" : "Δευτερα",
+"Tuesday" : "Τριτη",
+"Wednesday" : "Τεταρτη",
+"Thursday" : "Πεμπτη",
+"Friday" : "Παρασκευη",
+"Saturday" : "Σαββατο",
+"Sunday" : "Κυριακη"
+}
+
+
+
+
 
 BIG_FONT = ("Arial", 32, "bold")
 MEDIUM_FONT = ("Arial", 16, "bold")
@@ -100,9 +113,9 @@ POLOIS = (
 
 window = tk.Tk()
 
-window.geometry("600x400")
+window.geometry("600x500")
 window.config(bg=BACK_COLOR)
-window.title("Weather App ")
+window.title("Weather App")
 
 icon = tk.PhotoImage(file="assets/app_icon.png")
 window.iconphoto(False, icon)
@@ -166,7 +179,7 @@ def create_main_frame(search_city=None):
     city_label.pack(side=tk.LEFT, anchor=tk.W, padx=5, pady=5)
 
     city_search_entry = tk.Entry(city_frame, font=MEDIUM_FONT, bg=BACK_COLOR, fg=FRONT_COLOR)
-    city_search_entry.bind("<Return>", create_main_frame)
+    city_search_entry.bind("<Return>", lambda evt: create_main_frame())
     city_search_entry.pack(side=tk.LEFT, anchor=tk.W, padx=5, pady=5)
 
     city_search_button = tk.Button(city_frame, text="Go", font=MEDIUM_FONT, bg=BACK_COLOR, fg=FRONT_COLOR, activebackground ="#d47b15", command=create_main_frame)
@@ -209,9 +222,10 @@ def create_main_frame(search_city=None):
 
         date_dt = datetime.datetime.strptime(date_str, "%Y-%m-%d")
         day_str = date_dt.strftime("%A")
+        greek_day = GREEK_DAYS[day_str]
 
 
-        il = tk.Label(icons_frame, text=day_str, font=MEDIUM_FONT, bg=BACK_COLOR, fg=FRONT_COLOR)
+        il = tk.Label(icons_frame, text=greek_day, font=MEDIUM_FONT, bg=BACK_COLOR, fg=FRONT_COLOR)
         il.grid(row=0, column=column_index, sticky=tk.NSEW)
 
     icons_frame.pack(fill=tk.X, anchor=tk.W, padx=5, pady=5)
